@@ -1,364 +1,1375 @@
-<div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3 class="feature-title">Secure Transactions</h3>
-                    <p class="feature-description">Strategic partnerships with established Somali money transfer companies ensure security and legal compliance.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest in Somalia | Connecting Diaspora with Homeland Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Internal CSS to ensure styling works -->
+    <style>
+        :root {
+            /* Shadcn-inspired colors with Somali blue as primary */
+            --background: #ffffff;
+            --foreground: #09090B;
+            --card: #ffffff;
+            --card-foreground: #09090B;
+            --primary: #418FDE; /* Somali blue */
+            --primary-foreground: #FFFFFF;
+            --secondary: #EBF4FF; /* Light Somali blue */
+            --secondary-foreground: #09090B;
+            --muted: #f3f4f6;
+            --muted-foreground: #71717A;
+            --accent: #f5f5f5;
+            --accent-foreground: #09090B;
+            --destructive: #EF4444;
+            --destructive-foreground: #FFFFFF;
+            --border: #e5e7eb;
+            --input: #e5e7eb;
+            --ring: #418FDE;
+            --radius: 0.5rem;
+            --dark-blue: #0A4C92; /* Deeper Somali blue */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html, body {
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Common UI Components */
+        .card {
+            background-color: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            font-weight: 500;
+            font-size: 0.875rem;
+            height: 2.5rem;
+            padding: 0 1rem;
+            transition: all 150ms;
+            cursor: pointer;
+        }
+
+        .button-primary {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            border: 1px solid var(--primary);
+        }
+
+        .button-primary:hover {
+            background-color: var(--dark-blue);
+            border-color: var(--dark-blue);
+        }
+
+        .button-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .button-outline:hover {
+            background-color: var(--secondary);
+        }
+
+        .button-ghost {
+            background-color: transparent;
+            color: var(--foreground);
+            border: none;
+        }
+
+        .button-ghost:hover {
+            background-color: var(--secondary);
+        }
+
+        .button-lg {
+            height: 3rem;
+            padding: 0 1.5rem;
+            font-size: 1rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            height: 1.25rem;
+            padding: 0 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            line-height: 1.25rem;
+            white-space: nowrap;
+        }
+
+        .badge-primary {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+        }
+
+        .badge-secondary {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        .input {
+            display: flex;
+            height: 2.5rem;
+            width: 100%;
+            border-radius: var(--radius);
+            border: 1px solid var(--input);
+            background-color: transparent;
+            padding: 0 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: var(--ring);
+            box-shadow: 0 0 0 1px var(--ring);
+        }
+
+        /* Common Section Styling */
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1rem;
+            color: var(--muted-foreground);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--foreground);
+        }
+
+        .logo-star {
+            color: var(--primary);
+            margin-right: 0.25rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--muted-foreground);
+            transition: color 150ms;
+        }
+
+        .nav-link:hover {
+            color: var(--foreground);
+        }
+
+        .mobile-menu-button {
+            display: none;
+        }
+
+        /* 1. Hero Section */
+        .hero {
+            padding: 6rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom right, rgba(10, 76, 146, 0.05), rgba(65, 143, 222, 0.1));
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 3.75rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title .highlight {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0.125rem;
+            left: 0;
+            width: 100%;
+            height: 0.5rem;
+            background-color: rgba(65, 143, 222, 0.2);
+            z-index: -1;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        .hero-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-stat-value {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--foreground);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        /* 2. Features Section */
+        .features {
+            padding: 6rem 0;
+            background-color: var(--background);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            background-color: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: all 200ms;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.75rem;
+            background-color: var(--secondary);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            flex-grow: 1;
+        }
+
+        /* 3. How It Works Section */
+        .how-it-works {
+            padding: 6rem 0;
+            background-color: var(--muted);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            position: relative;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 9999px;
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+        }
+
+        .step-description {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        /* 4. Beyond Remittances Section */
+        .remittance-transformation {
+            padding: 6rem 0;
+            background-color: var(--background);
+        }
+
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .transformation-card {
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            background-color: var(--card);
+            transition: all 200ms;
+        }
+
+        .transformation-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .transformation-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .transformation-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .transformation-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .transformation-icon-traditional {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+        }
+
+        .transformation-icon-strategic {
+            background-color: rgba(65, 143, 222, 0.1);
+            color: var(--primary);
+        }
+
+        .transformation-list {
+            list-style: none;
+        }
+
+        .transformation-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            display: flex;
+            align-items: center;
+        }
+
+        .transformation-list li:last-child {
+            border-bottom: none;
+        }
+
+        .transformation-list li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1rem;
+            margin-left: -1rem;
+        }
+
+        .impact-statement {
+            margin-top: 3rem;
+            background-color: rgba(65, 143, 222, 0.05);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .impact-statement p {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        /* 5. Team Section */
+        .team {
+            padding: 6rem 0;
+            background-color: var(--muted);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-category {
+            background-color: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+        }
+
+        .team-category-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .team-category-title svg {
+            margin-right: 0.5rem;
+        }
+
+        .team-list {
+            list-style: none;
+        }
+
+        .team-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            display: flex;
+            align-items: center;
+        }
+
+        .team-list li:last-child {
+            border-bottom: none;
+        }
+
+        .team-list li::before {
+            content: '•';
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        /* 6. Projects Section */
+        .projects {
+            padding: 6rem 0;
+            background-color: var(--background);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background-color: var(--card);
+            transition: all 200ms;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-badges {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--foreground);
+        }
+
+        .project-description {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .project-return {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-return-value {
+            font-weight: 600;
+            color: var(--foreground);
+            font-size: 1rem;
+        }
+
+        .project-return-label {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+        }
+
+        .project-progress {
+            flex: 1;
+            margin: 0 1rem;
+        }
+
+        .progress-bar {
+            height: 0.5rem;
+            background-color: var(--secondary);
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .progress-value {
+            height: 100%;
+            background-color: var(--primary);
+        }
+
+        .project-funded {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .project-funded-value {
+            font-weight: 600;
+            color: var(--foreground);
+            font-size: 1rem;
+        }
+
+        .project-funded-label {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+        }
+
+        /* 7. Success Story Section */
+        .success-story {
+            padding: 6rem 0;
+            background-color: var(--muted);
+        }
+
+        .story-container {
+            margin-top: 3rem;
+        }
+
+        .story-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .story-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .story-card-negative {
+            background-color: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .story-card-positive {
+            background-color: rgba(10, 76, 146, 0.05);
+            border: 1px solid rgba(65, 143, 222, 0.2);
+        }
+
+        .story-card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .story-card-negative .story-card-title {
+            color: #EF4444;
+        }
+
+        .story-card-positive .story-card-title {
+            color: var(--primary);
+        }
+
+        .story-card-content {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .story-card-content p {
+            margin-bottom: 1rem;
+        }
+
+        .story-card-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-heading {
+            text-align: center;
+            margin: 3rem 0 1.5rem;
+        }
+
+        .story-heading h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--foreground);
+            margin-bottom: 0.5rem;
+        }
+
+        .story-heading p {
+            font-size: 1rem;
+            color: var(--muted-foreground);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 8. CTA Section */
+        .cta {
+            padding: 6rem 0;
+            background-color: var(--background);
+            text-align: center;
+        }
+
+        .cta-card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: linear-gradient(to bottom right, rgba(65, 143, 222, 0.05), rgba(10, 76, 146, 0.1));
+            border-radius: var(--radius);
+        }
+
+        .cta-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            color: var(--muted-foreground);
+            margin-bottom: 2rem;
+        }
+
+        .cta-input-group {
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .cta-input {
+            flex: 1;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: none;
+        }
+
+        .cta-button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--muted);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-company {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-company-description {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            margin: 1rem 0;
+        }
+
+        .footer-heading {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            transition: color 150ms;
+        }
+
+        .footer-links a:hover {
+            color: var(--foreground);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-items {
+                display: none;
+            }
+
+            .mobile-menu-button {
+                display: block;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .cta-input-group {
+                flex-direction: column;
+            }
+
+            .cta-input {
+                border-radius: var(--radius);
+                border-right: 1px solid var(--input);
+                margin-bottom: 0.5rem;
+            }
+
+            .cta-button {
+                border-radius: var(--radius);
+            }
+        }
+    </style>
+    
+    <!-- External CSS as a backup (if available) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-star">★</span>
+                DIAS<span>BRIDGE</span>
+            </a>
+            <nav class="nav-items">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#beyond-remittances" class="nav-link">Beyond Remittances</a>
+                <a href="#team" class="nav-link">Team</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#success-stories" class="nav-link">Success Stories</a>
+                <button class="button button-primary">Join Waitlist</button>
+            </nav>
+            <button class="button button-ghost mobile-menu-button">Menu</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-subtitle">Somali Diaspora Investments</div>
+                <h1 class="hero-title">Connecting <span class="highlight">Diaspora Capital</span> with <span class="highlight">Homeland Development</span></h1>
+                <p class="hero-description">The first digital investment platform connecting Somali diaspora directly with vetted infrastructure and business opportunities in Somalia.</p>
+                <div class="hero-actions">
+                    <button class="button button-primary button-lg">Start Investing Today</button>
+                    <button class="button button-outline button-lg">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">$1.4B</div>
+                    <div class="hero-stat-label">Annual Remittances to Invest</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">2M+</div>
+                    <div class="hero-stat-label">Global Somali Diaspora</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">$9B</div>
+                    <div class="hero-stat-label">Estimated Investable Assets</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-heading">
+                <div class="section-subtitle">From Remittances to Growth</div>
+                <h2 class="section-title">Why Choose Invest Somalia</h2>
+                <p class="section-description">Transform traditional remittances into strategic investments that generate sustainable growth, create jobs, and build generational wealth.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3 class="feature-title">Vetted Opportunities</h3>
+                    <p class="feature-description">Our local teams identify and thoroughly vet high-potential projects using a rigorous selection process focused on sustainability.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Mobile-First Design</h3>
-                    <p class="feature-description">Access your investments anytime, anywhere with our mobile-optimized platform designed for diaspora investors.</p>
+                    <div class="feature-icon">🌱</div>
+                    <h3 class="feature-title">Accessible Investment</h3>
+                    <p class="feature-description">Diaspora members can invest as little as $500 in specific projects, turning regular remittances into growth capital.</p>
                 </div>
-            </div>
-        </div>
-    </section>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Transparent Tracking</h3>
+                    <p class="feature-description">Monitor your investment progress through regular updates, photos, and financial reporting with full accountability.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title">Sustainable Growth</h3>
+                    <p class="feature-description">Projects generate both competitive financial returns and long-term economic development rather than short-term consumption.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <div class="section-heading">
-                <div class="section-subtitle">Simple Process</div>
-                <h2 class="section-title">How It Works</h2>
-                <p class="section-description">Our streamlined process makes investing in Somalia simple, transparent, and impactful.</p>
-            </div>
-
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Project Vetting</h3>
-                    <p class="step-description">Our local teams identify and thoroughly vet high-potential projects using a rigorous selection process.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Choose & Invest</h3>
-                    <p class="step-description">Browse vetted opportunities and invest as little as $500 in specific projects you connect with.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Track Progress</h3>
-                    <p class="step-description">Monitor your investments through regular updates, photos, and transparent financial reporting.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Receive Returns</h3>
-                    <p class="step-description">Enjoy both competitive financial returns and the satisfaction of making a positive impact.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Remittance Transformation Section -->
-    <section id="beyond-remittances" class="remittance-transformation">
-        <div class="container">
-            <div class="section-heading">
-                <div class="section-subtitle">Beyond Consumption</div>
-                <h2 class="section-title">Fueling Sustainable Investment</h2>
-                <p class="section-description">The $1.4 billion in annual remittances from the Somali diaspora primarily supports immediate consumption needs. Our platform transforms this capital flow into investments that generate long-term growth.</p>
-            </div>
-
-            <div class="transformation-grid">
-                <div class="transformation-card">
-                    <div class="transformation-header">
-                        <h3 class="transformation-title">Traditional Remittances</h3>
-                        <div class="transformation-icon transformation-icon-traditional">→</div>
-                    </div>
-                    <ul class="transformation-list">
-                        <li>Support daily consumption needs</li>
-                        <li>Create dependency cycles</li>
-                        <li>Volatile and unpredictable</li>
-                        <li>No wealth creation mechanism</li>
-                        <li>Limited economic impact</li>
-                    </ul>
-                </div>
-                <div class="transformation-card">
-                    <div class="transformation-header">
-                        <h3 class="transformation-title">Strategic Investments</h3>
-                        <div class="transformation-icon transformation-icon-strategic">↗</div>
-                    </div>
-                    <ul class="transformation-list">
-                        <li>Build productive capacity</li>
-                        <li>Create sustainable livelihoods</li>
-                        <li>Generate predictable returns</li>
-                        <li>Build generational wealth</li>
-                        <li>Multiply economic impact</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="impact-statement">
-                <p>Every $1 million redirected from consumption to investment creates an estimated 120+ jobs and contributes $3.5 million to Somalia's GDP over 5 years.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="team">
-        <div class="container">
-            <div class="section-heading">
-                <div class="section-subtitle">Our People</div>
-                <h2 class="section-title">The Teams That Make It Possible</h2>
-                <p class="section-description">DiasBridge brings together diverse experts committed to connecting diaspora capital with homeland development opportunities.</p>
-            </div>
-
-            <div class="team-grid">
-                <div class="team-category">
-                    <h3 class="team-category-title">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                        Local Expertise
-                    </h3>
-                    <ul class="team-list">
-                        <li>Somali entrepreneurs as project leads</li>
-                        <li>Community elders for cultural navigation</li>
-                        <li>Regional business networks</li>
-                        <li>Established hawala partners</li>
-                    </ul>
-                </div>
-                <div class="team-category">
-                    <h3 class="team-category-title">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        Regulatory Compliance
-                    </h3>
-                    <ul class="team-list">
-                        <li>Somalia financial regulatory advisors</li>
-                        <li>International investment law experts</li>
-                        <li>Cross-border transaction specialists</li>
-                        <li>Islamic finance scholars</li>
-                    </ul>
-                </div>
-                <div class="team-category">
-                    <h3 class="team-category-title">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                        Technical Development
-                    </h3>
-                    <ul class="team-list">
-                        <li>Platform engineering team</li>
-                        <li>Mobile payment integration specialists</li>
-                        <li>Cybersecurity and data protection experts</li>
-                        <li>Blockchain developers for transparency</li>
-                    </ul>
-                </div>
-                <div class="team-category">
-                    <h3 class="team-category-title">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-                        Impact Measurement
-                    </h3>
-                    <ul class="team-list">
-                        <li>Development economists</li>
-                        <li>SDG alignment specialists</li>
-                        <li>Independent verification partners</li>
-                        <li>Community impact assessment experts</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-heading">
-                <div class="section-subtitle">Investment Opportunities</div>
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-description">Explore some of our high-impact investment opportunities currently available.</p>
-            </div>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('/api/placeholder/400/200');"></div>
-                    <div class="project-content">
-                        <div class="project-badges">
-                            <span class="badge badge-secondary">Energy</span>
-                            <span class="badge badge-secondary">Infrastructure</span>
-                        </div>
-                        <h3 class="project-title">Rural Solar Mini-Grids</h3>
-                        <p class="project-description">Providing reliable electricity to 5,000+ households in underserved rural communities.</p>
-                        <div class="project-meta">
-                            <div class="project-return">
-                                <div class="project-return-value">14%</div>
-                                <div class="project-return-label">Target Return</div>
-                            </div>
-                            <div class="project-progress">
-                                <div class="progress-bar">
-                                    <div class="progress-value" style="width: 75%;"></div>
-                                </div>
-                            </div>
-                            <div class="project-funded">
-                                <div class="project-funded-value">$637.5K</div>
-                                <div class="project-funded-label">of $850K</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('/api/placeholder/400/200');"></div>
-                    <div class="project-content">
-                        <div class="project-badges">
-                            <span class="badge badge-secondary">Agriculture</span>
-                            <span class="badge badge-secondary">Processing</span>
-                        </div>
-                        <h3 class="project-title">Agricultural Processing Facility</h3>
-                        <p class="project-description">Increasing farmer incomes by 40% through value-added processing and market access.</p>
-                        <div class="project-meta">
-                            <div class="project-return">
-                                <div class="project-return-value">16%</div>
-                                <div class="project-return-label">Target Return</div>
-                            </div>
-                            <div class="project-progress">
-                                <div class="progress-bar">
-                                    <div class="progress-value" style="width: 62%;"></div>
-                                </div>
-                            </div>
-                            <div class="project-funded">
-                                <div class="project-funded-value">$744K</div>
-                                <div class="project-funded-label">of $1.2M</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('/api/placeholder/400/200');"></div>
-                    <div class="project-content">
-                        <div class="project-badges">
-                            <span class="badge badge-secondary">Healthcare</span>
-                            <span class="badge badge-secondary">Community</span>
-                        </div>
-                        <h3 class="project-title">Community Healthcare Clinic</h3>
-                        <p class="project-description">Providing essential healthcare services to underserved communities while generating sustainable revenue.</p>
-                        <div class="project-meta">
-                            <div class="project-return">
-                                <div class="project-return-value">12%</div>
-                                <div class="project-return-label">Target Return</div>
-                            </div>
-                            <div class="project-progress">
-                                <div class="progress-bar">
-                                    <div class="progress-value" style="width: 83%;"></div>
-                                </div>
-                            </div>
-                            <div class="project-funded">
-                                <div class="project-funded-value">$622.5K</div>
-                                <div class="project-funded-label">of $750K</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Story Section -->
-    <section id="success-stories" class="success-story">
-        <div class="container">
-            <div class="section-heading">
-                <div class="section-subtitle">Real Impact</div>
-                <h2 class="section-title">A Tale of Two Investments</h2>
-                <p class="section-description">See how our platform transforms the investment experience for the Somali diaspora.</p>
-            </div>
-
-            <div class="story-container">
-                <div class="story-cards">
-                    <div class="story-card story-card-negative">
-                        <h3 class="story-card-title">The Traditional Way</h3>
-                        <div class="story-card-content">
-                            <p>Ali, a business owner in Toronto, wired $30,000 to an "uncle" starting a shipping business in Somalia, promised a 50% return. After initial confirmation, communication stopped.</p>
-                            <p>Ali's relatives discovered the truth: the money bought a house in Hargeisa. No business existed. Ali lost everything with no documentation or recourse.</p>
-                        </div>
-                    </div>
-                    <div class="story-card story-card-positive">
-                        <h3 class="story-card-title">The Better Way</h3>
-                        <div class="story-card-content">
-                            <p>Through our platform, Ali invested the same $30,000 across verified opportunities: shipping logistics, solar energy, and agriculture. All projects were professionally vetted with legal protections and regular reporting.</p>
-                            <p>After three years, his investment grew to $46,500 with quarterly reports showing 47 jobs created. The shipping company expanded to three cities, the solar project powered 350 homes, and farmers increased their income.</p>
-                            <p>Ali built wealth while creating sustainable change in Somalia—without blind trust in informal connections.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="story-heading">
-                <h3>Remittances Reimagined</h3>
-                <p>From consumption to sustainable investment with small monthly contributions</p>
-            </div>
-            
-            <div class="story-container">
-                <div class="story-cards">
-                    <div class="story-card story-card-negative">
-                        <h3 class="story-card-title">The Traditional Way</h3>
-                        <div class="story-card-content">
-                            <p>Amina, a nurse in Minneapolis, sends $300 monthly to her family in Mogadishu. Over five years, she's sent $18,000—money that helped with immediate needs but quickly disappeared without creating lasting change or returns.</p>
-                        </div>
-                    </div>
-                    <div class="story-card story-card-positive">
-                        <h3 class="story-card-title">The Better Way</h3>
-                        <div class="story-card-content">
-                            <p>Amina now sends $200 for immediate family needs and invests $100 monthly in a solar project in her family's neighborhood. After 5 years, her $6,000 investment has grown to $8,200 and generates $1,230 annual income.</p>
-                            <p>Beyond financial returns, her investment powers her family's home, created local jobs, and inspired five friends to invest. Amina supports her family today while building wealth and developing Somalia's future.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section id="cta" class="cta">
-        <div class="container">
-            <div class="cta-card">
-                <h2 class="cta-title">Join the Movement Today</h2>
-                <p class="cta-description">Be among the first to access our platform and start investing in Somalia's future. Join our waitlist for early access.</p>
-                <div class="cta-input-group">
-                    <input type="email" class="input cta-input" placeholder="Enter your email">
-                    <button class="button button-primary cta-button">Get Early Access</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-company">
-                        <a href="#" class="logo">
-                            <span class="logo-star">★</span>
-                            DIAS<span>BRIDGE</span>
-                        </a>
-                        <p class="footer-company-description">
-                            Connecting Somali diaspora capital with homeland development opportunities.
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="footer-heading">Company</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer-heading">Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">How It Works</a></li>
-                        <li><a href="#">Investment Guide</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer-heading">Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Investment Disclaimer</a></li>
-                        <li><a href="#">Security</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 DiasBridge. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+              <div class="feature-card">
+                                  <div class="feature-icon">🔒</div>
+                                  <h3 class="feature-title">Secure Transactions</h3>
+                                  <p class="feature-description">Strategic partnerships with established Somali money transfer companies ensure security and legal compliance.</p>
+                              </div>
+                              <div class="feature-card">
+                                  <div class="feature-icon">📱</div>
+                                  <h3 class="feature-title">Mobile-First Design</h3>
+                                  <p class="feature-description">Access your investments anytime, anywhere with our mobile-optimized platform designed for diaspora investors.</p>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+              
+                  <!-- How It Works Section -->
+                  <section id="how-it-works" class="how-it-works">
+                      <div class="container">
+                          <div class="section-heading">
+                              <div class="section-subtitle">Simple Process</div>
+                              <h2 class="section-title">How It Works</h2>
+                              <p class="section-description">Our streamlined process makes investing in Somalia simple, transparent, and impactful.</p>
+                          </div>
+              
+                          <div class="steps">
+                              <div class="step">
+                                  <div class="step-number">1</div>
+                                  <h3 class="step-title">Project Vetting</h3>
+                                  <p class="step-description">Our local teams identify and thoroughly vet high-potential projects using a rigorous selection process.</p>
+                              </div>
+                              <div class="step">
+                                  <div class="step-number">2</div>
+                                  <h3 class="step-title">Choose & Invest</h3>
+                                  <p class="step-description">Browse vetted opportunities and invest as little as $500 in specific projects you connect with.</p>
+                              </div>
+                              <div class="step">
+                                  <div class="step-number">3</div>
+                                  <h3 class="step-title">Track Progress</h3>
+                                  <p class="step-description">Monitor your investments through regular updates, photos, and transparent financial reporting.</p>
+                              </div>
+                              <div class="step">
+                                  <div class="step-number">4</div>
+                                  <h3 class="step-title">Receive Returns</h3>
+                                  <p class="step-description">Enjoy both competitive financial returns and the satisfaction of making a positive impact.</p>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+              
+                  <!-- Remittance Transformation Section -->
+                  <section id="beyond-remittances" class="remittance-transformation">
+                      <div class="container">
+                          <div class="section-heading">
+                              <div class="section-subtitle">Beyond Consumption</div>
+                              <h2 class="section-title">Fueling Sustainable Investment</h2>
+                              <p class="section-description">The $1.4 billion in annual remittances from the Somali diaspora primarily supports immediate consumption needs. Our platform transforms this capital flow into investments that generate long-term growth.</p>
+                          </div>
+              
+                          <div class="transformation-grid">
+                              <div class="transformation-card">
+                                  <div class="transformation-header">
+                                      <h3 class="transformation-title">Traditional Remittances</h3>
+                                      <div class="transformation-icon transformation-icon-traditional">→</div>
+                                  </div>
+                                  <ul class="transformation-list">
+                                      <li>Support daily consumption needs</li>
+                                      <li>Create dependency cycles</li>
+                                      <li>Volatile and unpredictable</li>
+                                      <li>No wealth creation mechanism</li>
+                                      <li>Limited economic impact</li>
+                                  </ul>
+                              </div>
+                              <div class="transformation-card">
+                                  <div class="transformation-header">
+                                      <h3 class="transformation-title">Strategic Investments</h3>
+                                      <div class="transformation-icon transformation-icon-strategic">↗</div>
+                                  </div>
+                                  <ul class="transformation-list">
+                                      <li>Build productive capacity</li>
+                                      <li>Create sustainable livelihoods</li>
+                                      <li>Generate predictable returns</li>
+                                      <li>Build generational wealth</li>
+                                      <li>Multiply economic impact</li>
+                                  </ul>
+                              </div>
+                          </div>
+              
+                          <div class="impact-statement">
+                              <p>Every $1 million redirected from consumption to investment creates an estimated 120+ jobs and contributes $3.5 million to Somalia's GDP over 5 years.</p>
+                          </div>
+                      </div>
+                  </section>
+              
+                  <!-- Team Section -->
+                  <section id="team" class="team">
+                      <div class="container">
+                          <div class="section-heading">
+                              <div class="section-subtitle">Our People</div>
+                              <h2 class="section-title">The Teams That Make It Possible</h2>
+                              <p class="section-description">DiasBridge brings together diverse experts committed to connecting diaspora capital with homeland development opportunities.</p>
+                          </div>
+              
+                          <div class="team-grid">
+                              <div class="team-category">
+                                  <h3 class="team-category-title">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                      Local Expertise
+                                  </h3>
+                                  <ul class="team-list">
+                                      <li>Somali entrepreneurs as project leads</li>
+                                      <li>Community elders for cultural navigation</li>
+                                      <li>Regional business networks</li>
+                                      <li>Established hawala partners</li>
+                                  </ul>
+                              </div>
+                              <div class="team-category">
+                                  <h3 class="team-category-title">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                      Regulatory Compliance
+                                  </h3>
+                                  <ul class="team-list">
+                                      <li>Somalia financial regulatory advisors</li>
+                                      <li>International investment law experts</li>
+                                      <li>Cross-border transaction specialists</li>
+                                      <li>Islamic finance scholars</li>
+                                  </ul>
+                              </div>
+                              <div class="team-category">
+                                  <h3 class="team-category-title">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                      Technical Development
+                                  </h3>
+                                  <ul class="team-list">
+                                      <li>Platform engineering team</li>
+                                      <li>Mobile payment integration specialists</li>
+                                      <li>Cybersecurity and data protection experts</li>
+                                      <li>Blockchain developers for transparency</li>
+                                  </ul>
+                              </div>
+                              <div class="team-category">
+                                  <h3 class="team-category-title">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                                      Impact Measurement
+                                  </h3>
+                                  <ul class="team-list">
+                                      <li>Development economists</li>
+                                      <li>SDG alignment specialists</li>
+                                      <li>Independent verification partners</li>
+                                      <li>Community impact assessment experts</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+              
+                  <!-- Projects Section -->
+                  <section id="projects" class="projects">
+                      <div class="container">
+                          <div class="section-heading">
+                              <div class="section-subtitle">Investment Opportunities</div>
+                              <h2 class="section-title">Featured Projects</h2>
+                              <p class="section-description">Explore some of our high-impact investment opportunities currently available.</p>
+                          </div>
+              
+                          <div class="projects-grid">
+                              <div class="project-card">
+                                  <div class="project-image" style="background-image: url('/api/placeholder/400/200');"></div>
+                                  <div class="project-content">
+                                      <div class="project-badges">
+                                          <span class="badge badge-secondary">Energy</span>
+                                          <span class="badge badge-secondary">Infrastructure</span>
+                                      </div>
+                                      <h3 class="project-title">Rural Solar Mini-Grids</h3>
+                                      <p class="project-description">Providing reliable electricity to 5,000+ households in underserved rural communities.</p>
+                                      <div class="project-meta">
+                                          <div class="project-return">
+                                              <div class="project-return-value">14%</div>
+                                              <div class="project-return-label">Target Return</div>
+                                          </div>
+                                          <div class="project-progress">
+                                              <div class="progress-bar">
+                                                  <div class="progress-value" style="width: 75%;"></div>
+                                              </div>
+                                          </div>
+                                          <div class="project-funded">
+                                              <div class="project-funded-value">$637.5K</div>
+                                              <div class="project-funded-label">of $850K</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="project-card">
+                                  <div class="project-image" style="background-image: url('/api/placeholder/400/200');"></div>
+                                  <div class="project-content">
+                                      <div class="project-badges">
+                                          <span class="badge badge-secondary">Agriculture</span>
+                                          <span class="badge badge-secondary">Processing</span>
+                                      </div>
+                                      <h3 class="project-title">Agricultural Processing Facility</h3>
+                                      <p class="project-description">Increasing farmer incomes by 40% through value-added processing and market access.</p>
+                                      <div class="project-meta">
+                                          <div class="project-return">
+                                              <div class="project-return-value">16%</div>
+                                              <div class="project-return-label">Target Return</div>
+                                          </div>
+                                          <div class="project-progress">
+                                              <div class="progress-bar">
+                                                  <div class="progress-value" style="width: 62%;"></div>
+                                              </div>
+                                          </div>
+                                          <div class="project-funded">
+                                              <div class="project-funded-value">$744K</div>
+                                              <div class="project-funded-label">of $1.2M</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="project-card">
+                                  <div class="project-image" style="background-image: url('/api/placeholder/400/200');"></div>
+                                  <div class="project-content">
+                                      <div class="project-badges">
+                                          <span class="badge badge-secondary">Healthcare</span>
+                                          <span class="badge badge-secondary">Community</span>
+                                      </div>
+                                      <h3 class="project-title">Community Healthcare Clinic</h3>
+                                      <p class="project-description">Providing essential healthcare services to underserved communities while generating sustainable revenue.</p>
+                                      <div class="project-meta">
+                                          <div class="project-return">
+                                              <div class="project-return-value">12%</div>
+                                              <div class="project-return-label">Target Return</div>
+                                          </div>
+                                          <div class="project-progress">
+                                              <div class="progress-bar">
+                                                  <div class="progress-value" style="width: 83%;"></div>
+                                              </div>
+                                          </div>
+                                          <div class="project-funded">
+                                              <div class="project-funded-value">$622.5K</div>
+                                              <div class="project-funded-label">of $750K</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+              
+                  <!-- Success Story Section -->
+                  <section id="success-stories" class="success-story">
+                      <div class="container">
+                          <div class="section-heading">
+                              <div class="section-subtitle">Real Impact</div>
+                              <h2 class="section-title">A Tale of Two Investments</h2>
+                              <p class="section-description">See how our platform transforms the investment experience for the Somali diaspora.</p>
+                          </div>
+              
+                          <div class="story-container">
+                              <div class="story-cards">
+                                  <div class="story-card story-card-negative">
+                                      <h3 class="story-card-title">The Traditional Way</h3>
+                                      <div class="story-card-content">
+                                          <p>Ali, a business owner in Toronto, wired $30,000 to an "uncle" starting a shipping business in Somalia, promised a 50% return. After initial confirmation, communication stopped.</p>
+                                          <p>Ali's relatives discovered the truth: the money bought a house in Hargeisa. No business existed. Ali lost everything with no documentation or recourse.</p>
+                                      </div>
+                                  </div>
+                                  <div class="story-card story-card-positive">
+                                      <h3 class="story-card-title">The Better Way</h3>
+                                      <div class="story-card-content">
+                                          <p>Through our platform, Ali invested the same $30,000 across verified opportunities: shipping logistics, solar energy, and agriculture. All projects were professionally vetted with legal protections and regular reporting.</p>
+                                          <p>After three years, his investment grew to $46,500 with quarterly reports showing 47 jobs created. The shipping company expanded to three cities, the solar project powered 350 homes, and farmers increased their income.</p>
+                                          <p>Ali built wealth while creating sustainable change in Somalia—without blind trust in informal connections.</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="story-heading">
+                              <h3>Remittances Reimagined</h3>
+                              <p>From consumption to sustainable investment with small monthly contributions</p>
+                          </div>
+                          
+                          <div class="story-container">
+                              <div class="story-cards">
+                                  <div class="story-card story-card-negative">
+                                      <h3 class="story-card-title">The Traditional Way</h3>
+                                      <div class="story-card-content">
+                                          <p>Amina, a nurse in Minneapolis, sends $300 monthly to her family in Mogadishu. Over five years, she's sent $18,000—money that helped with immediate needs but quickly disappeared without creating lasting change or returns.</p>
+                                      </div>
+                                  </div>
+                                  <div class="story-card story-card-positive">
+                                      <h3 class="story-card-title">The Better Way</h3>
+                                      <div class="story-card-content">
+                                          <p>Amina now sends $200 for immediate family needs and invests $100 monthly in a solar project in her family's neighborhood. After 5 years, her $6,000 investment has grown to $8,200 and generates $1,230 annual income.</p>
+                                          <p>Beyond financial returns, her investment powers her family's home, created local jobs, and inspired five friends to invest. Amina supports her family today while building wealth and developing Somalia's future.</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+                  
+                  <!-- CTA Section -->
+                  <section id="cta" class="cta">
+                      <div class="container">
+                          <div class="cta-card">
+                              <h2 class="cta-title">Join the Movement Today</h2>
+                              <p class="cta-description">Be among the first to access our platform and start investing in Somalia's future. Join our waitlist for early access.</p>
+                              <div class="cta-input-group">
+                                  <input type="email" class="input cta-input" placeholder="Enter your email">
+                                  <button class="button button-primary cta-button">Get Early Access</button>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+              
+                  <!-- Footer -->
+                  <footer>
+                      <div class="container">
+                          <div class="footer-grid">
+                              <div>
+                                  <div class="footer-company">
+                                      <a href="#" class="logo">
+                                          <span class="logo-star">★</span>
+                                          DIAS<span>BRIDGE</span>
+                                      </a>
+                                      <p class="footer-company-description">
+                                          Connecting Somali diaspora capital with homeland development opportunities.
+                                      </p>
+                                  </div>
+                              </div>
+                              <div>
+                                  <h3 class="footer-heading">Company</h3>
+                                  <ul class="footer-links">
+                                      <li><a href="#">About Us</a></li>
+                                      <li><a href="#">Our Team</a></li>
+                                      <li><a href="#">Careers</a></li>
+                                      <li><a href="#">Contact</a></li>
+                                  </ul>
+                              </div>
+                              <div>
+                                  <h3 class="footer-heading">Resources</h3>
+                                  <ul class="footer-links">
+                                      <li><a href="#">How It Works</a></li>
+                                      <li><a href="#">Investment Guide</a></li>
+                                      <li><a href="#">FAQs</a></li>
+                                      <li><a href="#">Blog</a></li>
+                                  </ul>
+                              </div>
+                              <div>
+                                  <h3 class="footer-heading">Legal</h3>
+                                  <ul class="footer-links">
+                                      <li><a href="#">Privacy Policy</a></li>
+                                      <li><a href="#">Terms of Service</a></li>
+                                      <li><a href="#">Investment Disclaimer</a></li>
+                                      <li><a href="#">Security</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="footer-bottom">
+                              <p>&copy; 2025 DiasBridge. All rights reserved.</p>
+                          </div>
+                      </div>
+                  </footer>
+              </body>
+              </html>
