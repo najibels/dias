@@ -46,7 +46,7 @@ a {
     padding: 0 1.5rem;
 }
 
-/* Common UI Components */
+/* shadcn-style components */
 .card {
     background-color: var(--card);
     border-radius: var(--radius);
@@ -144,35 +144,6 @@ a {
     box-shadow: 0 0 0 1px var(--ring);
 }
 
-/* Common Section Styling */
-.section-heading {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.section-subtitle {
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-}
-
-.section-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    margin-bottom: 1rem;
-}
-
-.section-description {
-    font-size: 1rem;
-    color: var(--muted-foreground);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
 /* Header */
 header {
     border-bottom: 1px solid var(--border);
@@ -228,7 +199,7 @@ header {
     display: none;
 }
 
-/* 1. Hero Section */
+/* Hero Section */
 .hero {
     padding: 6rem 0;
     display: flex;
@@ -327,10 +298,38 @@ header {
     color: var(--muted-foreground);
 }
 
-/* 2. Features Section */
+/* Features Section */
 .features {
     padding: 6rem 0;
     background-color: var(--background);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-subtitle {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    font-size: 1rem;
+    color: var(--muted-foreground);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .features-grid {
@@ -378,7 +377,7 @@ header {
     flex-grow: 1;
 }
 
-/* 3. How It Works Section */
+/* How It Works */
 .how-it-works {
     padding: 6rem 0;
     background-color: var(--muted);
@@ -420,164 +419,7 @@ header {
     color: var(--muted-foreground);
 }
 
-/* 4. Beyond Remittances Section */
-.remittance-transformation {
-    padding: 6rem 0;
-    background-color: var(--background);
-}
-
-.transformation-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.transformation-card {
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    padding: 2rem;
-    background-color: var(--card);
-    transition: all 200ms;
-}
-
-.transformation-card:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    transform: translateY(-5px);
-}
-
-.transformation-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border);
-}
-
-.transformation-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-.transformation-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 9999px;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.transformation-icon-traditional {
-    background-color: rgba(239, 68, 68, 0.1);
-    color: #EF4444;
-}
-
-.transformation-icon-strategic {
-    background-color: rgba(65, 143, 222, 0.1);
-    color: var(--primary);
-}
-
-.transformation-list {
-    list-style: none;
-}
-
-.transformation-list li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.875rem;
-    color: var(--muted-foreground);
-    display: flex;
-    align-items: center;
-}
-
-.transformation-list li:last-child {
-    border-bottom: none;
-}
-
-.transformation-list li::before {
-    content: '•';
-    color: var(--primary);
-    font-weight: bold;
-    display: inline-block;
-    width: 1rem;
-    margin-left: -1rem;
-}
-
-.impact-statement {
-    margin-top: 3rem;
-    background-color: rgba(65, 143, 222, 0.05);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.impact-statement p {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--primary);
-}
-
-/* 5. Team Section */
-.team {
-    padding: 6rem 0;
-    background-color: var(--muted);
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.team-category {
-    background-color: var(--card);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    padding: 1.5rem;
-}
-
-.team-category-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-}
-
-.team-category-title svg {
-    margin-right: 0.5rem;
-}
-
-.team-list {
-    list-style: none;
-}
-
-.team-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.875rem;
-    color: var(--muted-foreground);
-    display: flex;
-    align-items: center;
-}
-
-.team-list li:last-child {
-    border-bottom: none;
-}
-
-.team-list li::before {
-    content: '•';
-    color: var(--primary);
-    margin-right: 0.5rem;
-}
-
-/* 6. Projects Section */
+/* Projects Section */
 .projects {
     padding: 6rem 0;
     background-color: var(--background);
@@ -690,7 +532,7 @@ header {
     color: var(--muted-foreground);
 }
 
-/* 7. Success Story Section */
+/* Success Story Section */
 .success-story {
     padding: 6rem 0;
     background-color: var(--muted);
@@ -752,6 +594,107 @@ header {
     margin-bottom: 0;
 }
 
+/* Remittance Transformation Section */
+.remittance-transformation {
+    padding: 6rem 0;
+    background-color: var(--background);
+}
+
+.transformation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.transformation-card {
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    background-color: var(--card);
+    transition: all 200ms;
+}
+
+.transformation-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+}
+
+.transformation-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.transformation-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.transformation-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.transformation-icon-traditional {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #EF4444;
+}
+
+.transformation-icon-strategic {
+    background-color: rgba(65, 143, 222, 0.1);
+    color: var(--primary);
+}
+
+.transformation-list {
+    list-style: none;
+}
+
+.transformation-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    display: flex;
+    align-items: center;
+}
+
+.transformation-list li:last-child {
+    border-bottom: none;
+}
+
+.transformation-list li::before {
+    content: '•';
+    color: var(--primary);
+    font-weight: bold;
+    display: inline-block;
+    width: 1rem;
+    margin-left: -1rem;
+}
+
+.impact-statement {
+    margin-top: 3rem;
+    background-color: rgba(65, 143, 222, 0.05);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.impact-statement p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--primary);
+}
+
 .story-heading {
     text-align: center;
     margin: 3rem 0 1.5rem;
@@ -771,7 +714,105 @@ header {
     margin: 0 auto;
 }
 
-/* 8. CTA Section */
+.impact {
+    padding: 6rem 0;
+    background: linear-gradient(to bottom right, var(--primary), var(--dark-blue));
+    color: var(--primary-foreground);
+}
+
+.impact .section-subtitle,
+.impact .section-title,
+.impact .section-description {
+    color: var(--primary-foreground);
+}
+
+.impact .section-description {
+    opacity: 0.9;
+}
+
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.impact-stat {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    backdrop-filter: blur(8px);
+}
+
+.impact-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.impact-label {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+/* Team Section */
+.team {
+    padding: 6rem 0;
+    background-color: var(--muted);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.team-category {
+    background-color: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+}
+
+.team-category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.team-category-title svg {
+    margin-right: 0.5rem;
+}
+
+.team-list {
+    list-style: none;
+}
+
+.team-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    display: flex;
+    align-items: center;
+}
+
+.team-list li:last-child {
+    border-bottom: none;
+}
+
+.team-list li::before {
+    content: '•';
+    color: var(--primary);
+    margin-right: 0.5rem;
+}
+
+/* CTA Section */
 .cta {
     padding: 6rem 0;
     background-color: var(--background);
@@ -871,50 +912,7 @@ footer {
     color: var(--muted-foreground);
 }
 
-/* Impact Stats (Additional section not currently used) */
-.impact {
-    padding: 6rem 0;
-    background: linear-gradient(to bottom right, var(--primary), var(--dark-blue));
-    color: var(--primary-foreground);
-}
-
-.impact .section-subtitle,
-.impact .section-title,
-.impact .section-description {
-    color: var(--primary-foreground);
-}
-
-.impact .section-description {
-    opacity: 0.9;
-}
-
-.impact-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.impact-stat {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    text-align: center;
-    backdrop-filter: blur(8px);
-}
-
-.impact-value {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.impact-label {
-    font-size: 0.875rem;
-    opacity: 0.9;
-}
-
-/* Responsive Styles */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2.5rem;
